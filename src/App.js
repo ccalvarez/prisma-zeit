@@ -15,6 +15,7 @@ export default props => {
 		...{ color: '#eee', label: 'Unknown error' }
 	].find(x => x.color)[0]
 
+	console.log('hola')
 	return (
 		<div style={{ backgroundColor: box.color, color: '#ffffff', width: '300px', padding: '20px' }}>
 			{box.label}

@@ -16,6 +16,7 @@ const client = new ApolloClient({
 	uri: '../api'
 })
 
+console.log(client)
 // App
 render(
 	<ApolloProvider client={client}>
