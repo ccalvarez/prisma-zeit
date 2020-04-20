@@ -9,11 +9,11 @@ export default props => {
 	const { loading, error, data } = useQuery(USERS)
 
 	const box = [
-		...(loading ? { color: '#ffc40c', label: 'Loading...' } : {}),
-		...(error ? { color: '#ff0000', label: `Error! ${error.message}` } : {}),
-		...(data ? { color: '#6a007a', label: 'Data:' } : {}),
-		...{ color: '#eee', label: 'Unknown error' }
-	].find(x => x.color)[0]
+		{ ...(loading && { color: '#ffc40c', label: 'Loading...' }) },
+		{ ...(error && { color: '#ff0000', label: `Error! ${error.message}` }) },
+		{ ...(data && { color: '#6a007a', label: 'Data:' }) },
+		{ color: '#eee', label: 'Unknown error' }
+	].find(x => x.color)
 
 	console.log('hola')
 	return (
